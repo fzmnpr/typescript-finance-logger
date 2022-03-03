@@ -1,8 +1,10 @@
 const path = require('path');
 
 module.exports= {
-    devtool: 'eval-source-map',
+    devtool: 'inline-source-map',
     entry: './src/app.ts',
+    mode: 'development',
+    watch: true,
     module:{
         rules:[
             {
@@ -18,6 +20,6 @@ module.exports= {
     output: {
         publicPath: 'public',
         filename: './dist/bundle.js',
-        path: path.resolve(__dirname, 'public')
+        path: path.resolve(__dirname, 'public'),
     }
 }

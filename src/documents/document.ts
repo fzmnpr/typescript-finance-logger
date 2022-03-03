@@ -30,8 +30,8 @@ interface IsPerson {
   }
   greetPerson(me);
   //------------------------------------------------------------------
-  const inOne = new Invoice("mario", "website", 250);
-  const inTow = new Invoice("luigi", "website", 5500);
+  const inOne = new Invoice("mario", "website", 250 , 1);
+  const inTow = new Invoice("luigi", "website", 5500 ,5);
   let invoices: Invoice[] = [];
   invoices.push(inOne);
   invoices.push(inTow);
@@ -40,8 +40,8 @@ interface IsPerson {
   let docTow : HasFormatter;
   
   //because docOne and docTow are using the interface HasFormatter and invoices and payments using the interface HasFormatter, we can use them in the same way:
-  docOne = new Invoice("yoshi", "web work", 250);
-  docTow = new Payment("mario", "web work", 250);
+  docOne = new Invoice("yoshi", "web work", 250 , 1);
+  docTow = new Payment("mario", "web work", 250 ,5);
   
   
   //only objects that implement the interface HasFormatter can be added to the array:

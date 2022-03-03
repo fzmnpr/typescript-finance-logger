@@ -1,3 +1,6 @@
+:root {
+    --primary-color: #ff0aa7;
+  }
 body{
     margin: 0;
     font-family: Roboto; 
@@ -8,7 +11,7 @@ body{
   }
   h1{
     margin: 40px auto;
-    color: #ff0aa7;
+    color: var(--primary-color);
     text-align: center;
   }
   ul{
@@ -19,9 +22,13 @@ body{
     padding: 6px 10px;
     border: 1px solid #eee;
     margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
   }
   li h4{
-    color: #ff0aa7;
+    color: var(--primary-color);
     margin: 0;
     text-transform: capitalize;
   }
@@ -58,7 +65,7 @@ body{
   button{
     color: white;
     border: 0;
-    background: #ff0aa7;
+    background: var(--primary-color);
     padding: 6px;
     min-width: 80px;
     border-radius: 4px;
@@ -70,3 +77,23 @@ body{
     margin-top: 40px;
     font-size: 0.7em;
   }
+  .alert{
+    background: #fc5d72;
+    color: white;
+    padding: 6px;
+    height: 70px;
+    width: 100%;
+    border-radius: 4px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+  }
+  .d-none {
+    display: none;
+  }
+  .delete::before {
+    font-family: "Font Awesome 5 Free"; 
+	font-weight: 900;
+	content: "\f1f8";
+    cursor: pointer;
+    color : #fd2600;
+}

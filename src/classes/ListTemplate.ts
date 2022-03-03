@@ -1,24 +1,22 @@
 import {HasFormatter} from "../Interfaces/HasFormatter.js";
-
-/*  
-    1. register a list container (ul) in the constructor
-    2. create a render method to render a new li to the container
-    --accepts arguments : invoiceer and amount, a heading, a position
-    --create the html template(li , h4, p)
-    --create a new li tempelate to the start/end of the list
-
-*/
-
 export class ListTemplate{
-    constructor(private container : HTMLUListElement){};
+    constructor(public container : HTMLUListElement){};
     render(item : HasFormatter, heading : string , pos: 'start' | 'end'){
         const li = document.createElement('li');
+        const div = document.createElement('div');
         const h4 = document.createElement('h4');
-        h4.innerText = heading;
-        li.append(h4);
         const p = document.createElement('p');
+        const deleteSpan = document.createElement('span');
+        let id = Math.floor(Math.random() * 100);
+        h4.innerText = heading;
+        li.append(div);
+        li.append(deleteSpan);
+        li.setAttribute('id', `item-${id}`);
+        deleteSpan.classList.add('delete');
+        deleteSpan.setAttribute('id', `item-${id}`);
+        div.append(h4);
         p.innerText = item.format();
-        li.append(p);
+        div.append(p);
         if(pos === 'start'){
             this.container.prepend(li);
         }else{
